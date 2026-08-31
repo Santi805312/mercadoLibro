@@ -2,6 +2,7 @@ package com.ingenieriaSoftware2.Service.Implementations;
 
 import com.ingenieriaSoftware2.DTO.Request.UsuarioRequestDTO;
 import com.ingenieriaSoftware2.Entity.Usuario;
+import com.ingenieriaSoftware2.Exception.Usuario.UsuarioNoEncontrado;
 import com.ingenieriaSoftware2.Repository.UsuarioRepository;
 import com.ingenieriaSoftware2.Service.Interfaces.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,7 +61,8 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return null;
+    public UserDetails loadUserByUsername(String nombre){
+        Usuario usuario = usuarioRepository.findByNombre(nombre).orElseThrow(() -> new UsuarioNoEncontrado());
+        return usuario;
     }
 }

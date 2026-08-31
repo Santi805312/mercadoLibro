@@ -26,7 +26,6 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .cors(cors -> cors.disable())
 
-                // Permitir TODO (para pruebas)
                 .authorizeHttpRequests(auth -> auth
                         .anyRequest().permitAll()
                 )
