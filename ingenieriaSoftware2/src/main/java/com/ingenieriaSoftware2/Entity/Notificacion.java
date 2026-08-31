@@ -4,9 +4,18 @@ import com.ingenieriaSoftware2.Enums.CanalNotificacion;
 import com.ingenieriaSoftware2.Enums.EstadoNotificacion;
 import com.ingenieriaSoftware2.Enums.TipoNotificacion;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.UUID;
 
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Notificacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +30,7 @@ public class Notificacion {
     private Intercambio intercambio;
 
     @ManyToOne
-    @JoinColumn(name = "resena_id", nullable = true)
+    @JoinColumn(name = "resenia_id", nullable = true)
     private Resenia resenia;
 
     @ManyToOne

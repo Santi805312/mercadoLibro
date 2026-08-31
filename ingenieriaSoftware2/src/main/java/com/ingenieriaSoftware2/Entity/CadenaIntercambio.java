@@ -2,9 +2,18 @@ package com.ingenieriaSoftware2.Entity;
 
 import com.ingenieriaSoftware2.Enums.EstadoCadena;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.*;
 
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class CadenaIntercambio {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

@@ -40,8 +40,8 @@ public class Intercambio {
     private Libro libroOfrecido;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ofertante_id", nullable = false)
-    private Usuario ofertante;
+    @JoinColumn(name = "prestador_id", nullable = false)
+    private Usuario prestador;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "receptor_id", nullable = false)

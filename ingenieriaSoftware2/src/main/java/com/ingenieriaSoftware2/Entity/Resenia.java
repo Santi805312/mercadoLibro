@@ -41,6 +41,6 @@ public class Resenia {
 
     private LocalDate fecha = LocalDate.now();
 
-    @OneToMany(mappedBy = "reseña", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "resenia", cascade = CascadeType.ALL)
     private List<Notificacion> notificaciones = new ArrayList<>();
 }
