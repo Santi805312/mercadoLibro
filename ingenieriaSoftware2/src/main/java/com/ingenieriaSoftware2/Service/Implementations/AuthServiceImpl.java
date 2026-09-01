@@ -51,6 +51,7 @@ public class AuthServiceImpl implements AuthService {
         Usuario usuarioGuardado = usuarioRepository.save(usuario);
         String token = jwtService.generarToken((UserDetails) usuarioGuardado);
         return new AuthResponseDTO(
+                usuario.getId(),
                 token,
                 usuarioGuardado.getNombre(),
                 usuarioGuardado.getEmail(),
@@ -82,6 +83,7 @@ public class AuthServiceImpl implements AuthService {
             String token = jwtService.generarToken((UserDetails) usuario);
 
             return new AuthResponseDTO(
+                    usuario.getId(),
                     token,
                     usuario.getNombre(),
                     usuario.getEmail(),
@@ -125,6 +127,7 @@ public class AuthServiceImpl implements AuthService {
         String nuevoToken = jwtService.refrescarToken(token);
 
         return new AuthResponseDTO(
+                usuario.getId(),
                 nuevoToken,
                 usuario.getNombre(),
                 usuario.getEmail(),
