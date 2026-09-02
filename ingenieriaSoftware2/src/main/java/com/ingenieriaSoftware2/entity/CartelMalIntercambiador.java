@@ -10,6 +10,6 @@ public class CartelMalIntercambiador {
     @Id @Column(name="email_reportante_id", nullable=false) private String emailReportanteId;
     @Id @Column(name="hora_reporte", nullable=false) private LocalDateTime horaReporte;
     @Id @Column(name="email_reportado_id", nullable=false) private String emailReportadoId;
-    @Column(name="Cartel", nullable=false) private Boolean cartel = true;
+    @Column(name="cartel", nullable=false) private Boolean cartel = true;
     @Data @NoArgsConstructor @AllArgsConstructor public static class Id implements java.io.Serializable { String emailReportanteId; LocalDateTime horaReporte; String emailReportadoId; }
 }
