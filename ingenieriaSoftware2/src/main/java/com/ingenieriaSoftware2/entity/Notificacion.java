@@ -18,4 +18,11 @@ public class Notificacion {
     @Column(name="leida", nullable=false) private Boolean leida = false;
     @Column(name="archivada", nullable=false) private Boolean archivada = false;
     @Column(name="fecha_creacion", nullable=false) private LocalDateTime fechaCreacion;
+
+    @PrePersist
+    void prePersist() {
+        if (leida == null) leida = false;
+        if (archivada == null) archivada = false;
+        if (fechaCreacion == null) fechaCreacion = LocalDateTime.now();
+    }
 }
