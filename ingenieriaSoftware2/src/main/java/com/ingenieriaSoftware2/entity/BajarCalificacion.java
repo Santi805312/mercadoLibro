@@ -10,6 +10,6 @@ public class BajarCalificacion {
     @Id @Column(name="email_reportante_id", nullable=false) private String emailReportanteId;
     @Id @Column(name="hora_reporte", nullable=false) private LocalDateTime horaReporte;
     @Id @Column(name="email_reportado_id", nullable=false) private String emailReportadoId;
-    @Column(name="Castigo") private Short castigo;
+    @Column(name="castigo") private Short castigo;
     @Data @NoArgsConstructor @AllArgsConstructor public static class Id implements java.io.Serializable { String emailReportanteId; LocalDateTime horaReporte; String emailReportadoId; }
 }
