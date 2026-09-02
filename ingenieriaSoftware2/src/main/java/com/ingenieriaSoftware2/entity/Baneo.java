@@ -2,6 +2,7 @@ package com.ingenieriaSoftware2.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.DynamicInsert;
 import java.time.LocalDateTime;
 
 @Entity
