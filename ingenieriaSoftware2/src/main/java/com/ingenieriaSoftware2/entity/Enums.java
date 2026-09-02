@@ -18,4 +18,5 @@ public final class Enums {
     public enum MotivoReporte { MAL_ESTADO_LIBRO, INCUMPLIMIENTO_INTERCAMBIO, FRAUDE, COMPORTAMIENTO_INADECUADO, OTRO }
     public enum EstadoReporte { PENDIENTE, EN_REVISION, RESUELTO, RECHAZADO }
     public enum TipoNotificacion { PUBLICACION_NUEVA, BAJA_PRECIO, CRUCE_VERDE, OTRO }
+    public enum TipoSancion { BANEO, BAJAR_CALIFICACION, CARTEL_MAL_INTERCAMBIADOR }
 }
