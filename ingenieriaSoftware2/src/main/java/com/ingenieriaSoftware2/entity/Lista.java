@@ -17,5 +17,12 @@ public class Lista {
     @Column(name="precio_max", precision=10, scale=2) private BigDecimal precioMax;
     @JdbcTypeCode(SqlTypes.ARRAY) @Column(name="condiciones_aceptables", columnDefinition="calidad_libro[]") private Enums.CalidadLibro[] condicionesAceptables;
     @Column(name="fecha_agregado", nullable=false) private LocalDateTime fechaAgregado;
-    @Data @NoArgsConstructor @AllArgsConstructor public static class Id implements java.io.Serializable { String emailUsuario; String isbn; }
+
+    @PrePersist
+    void prePersist() {
+        if (fechaAgregado == null) fechaAgregado = LocalDateTime.now();
+    }
+
+    @Data @NoArgsConstructor @AllArgsConstructor
+    public static class Id implements java.io.Serializable { String emailUsuario; String isbn; }
 }
