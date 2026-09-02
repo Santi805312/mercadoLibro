@@ -2,9 +2,11 @@ package com.ingenieriaSoftware2.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 import java.time.LocalDateTime;
 
-@Entity @Table(name="movimiento_puntos") @IdClass(MovimientoPuntos.Id.class)
+@Entity @Table(name="movimiento_puntos", schema="public") @IdClass(MovimientoPuntos.Id.class)
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class MovimientoPuntos {
     @Id @Column(name="isbn_solicitante", nullable=false) private String isbnSolicitante;
@@ -14,7 +16,7 @@ public class MovimientoPuntos {
     @Id @Column(name="propietario_id_ofrecida", nullable=false) private String propietarioIdOfrecida;
     @Id @Column(name="hora_de_publicacion_ofrecida", nullable=false) private LocalDateTime horaDePublicacionOfrecida;
     @Id @Column(name="id_usuario", nullable=false) private String idUsuario;
-    @Id @Enumerated(EnumType.STRING) @Column(name="tipo", nullable=false) private Enums.TipoMovimiento tipo;
+    @Id @JdbcTypeCode(SqlTypes.NAMED_ENUM) @Enumerated(EnumType.STRING) @Column(name="tipo", nullable=false) private Enums.TipoMovimiento tipo;
     @Column(name="monto", nullable=false) private Long monto;
     @Data @NoArgsConstructor @AllArgsConstructor public static class Id implements java.io.Serializable {
         String isbnSolicitante; String propietarioIdSolicitante; LocalDateTime horaDePublicacionSolicitante; String isbnOfrecida; String propietarioIdOfrecida; LocalDateTime horaDePublicacionOfrecida; String idUsuario; Enums.TipoMovimiento tipo;
