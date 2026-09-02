@@ -4,7 +4,7 @@ Proyecto de **Ingeniería de Software II**: plataforma para intercambio, compra 
 
 ## Estado actual
 
-El backend se encuentra en `ingenieriaSoftware2/` y está desarrollado con **Java + Spring Boot + Maven**. Actualmente la configuración local utiliza **H2 en memoria** para desarrollo/pruebas. fileciteturn6file0
+El backend se encuentra en `ingenieriaSoftware2/` y está desarrollado con **Java + Spring Boot + Maven**. Actualmente la configuración local utiliza **H2 en memoria** para desarrollo/pruebas.
 
 La base de datos objetivo del proyecto está desplegada en **Supabase/PostgreSQL** y cuenta actualmente con **17 tablas** que modelan usuarios, libros, publicaciones, compras, intercambios, cadenas de intercambio, puntos, reseñas, reportes, listas y notificaciones.
 
@@ -100,7 +100,7 @@ ingenieriaSoftware2/
     └── test/
 ```
 
-La configuración actual de desarrollo utiliza H2 con `create-drop`, por lo que la aplicación local no está conectada todavía a la instancia de Supabase. fileciteturn6file0
+La configuración actual de desarrollo utiliza H2 con `create-drop`, por lo que la aplicación local no está conectada todavía a la instancia de Supabase.
 
 ## Próximos pasos
 
@@ -125,7 +125,3 @@ La configuración actual de desarrollo utiliza H2 con `create-drop`, por lo que 
 - H2 para desarrollo local
 - GitHub Actions
 - SonarQube
-
-## Repositorio
-
-urlSanti805312/mercadoLibro en GitHubhttps://github.com/Santi805312/mercadoLibro
