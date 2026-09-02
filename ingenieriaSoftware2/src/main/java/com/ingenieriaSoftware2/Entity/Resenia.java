@@ -1,6 +1,8 @@
 package com.ingenieriaSoftware2.Entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,15 +28,17 @@ public class Resenia {
     private Intercambio intercambio;
 
     @ManyToOne
-    @JoinColumn(name = "usuario_autor_id", nullable = false)
+    @JoinColumn(name = "autor", nullable = false)
     private Usuario autor; // quien escribe la reseña
 
     @ManyToOne
-    @JoinColumn(name = "usuario_calificado_id", nullable = false)
+    @JoinColumn(name = "calificado", nullable = false)
     private Usuario calificado; // a quién se reseña
 
+    @Min(value = 0, message = "La calificación mínima es 0")
+    @Max(value = 5, message = "La calificación máxima es 5")
     @Column(nullable = false)
-    private int calificacion;
+    private float calificacion;
 
     @Column(length = 500)
     private String comentario;
